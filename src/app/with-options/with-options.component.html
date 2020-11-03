@@ -1,0 +1,17 @@
+<p><a href="" routerLink="/dashboard"><button class="btn-info m-2">Dashboard</button></a></p>
+<table datatable [dtOptions]="dtOptions" class="row-border hover" *ngIf="persons?.length != 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="persons?.length != 0">
+      <tr *ngFor="let person of persons">
+          <td>{{ person.id }}</td>
+          <td>{{ person.firstName }}</td>
+          <td>{{ person.lastName }}</td>
+      </tr>
+    </tbody>
+</table>

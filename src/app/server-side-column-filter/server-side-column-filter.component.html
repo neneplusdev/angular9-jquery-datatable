@@ -1,0 +1,29 @@
+<p><a href="" routerLink="/dashboard"><button class="btn-info m-2">Dashboard</button></a></p>
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="persons?.length != 0">
+      <tr *ngFor="let person of persons">
+          <td>{{ person.id }}</td>
+          <td>{{ person.firstName }}</td>
+          <td>{{ person.lastName }}</td>
+      </tr>
+  </tbody>
+  <tbody *ngIf="persons?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  <tbody>
+  <tfoot>
+    <tr>
+      <th><input type="text" placeholder="Search ID" name="search-id"/></th>
+      <th><input type="text" placeholder="Search first name" name="search-first-name"/></th>
+      <th><input type="text" placeholder="Search last name" name="search-last-name"/></th>
+    </tr>
+  </tfoot>
+</table>

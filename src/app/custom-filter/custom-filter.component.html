@@ -1,0 +1,14 @@
+<p><a href="" routerLink="/dashboard"><button class="btn-info m-2">Dashboard</button></a></p>
+<form (submit)="filterById()">
+    <label>
+      <span class="m-3">Min</span> 
+      <input type="number" name="min" id="min" [(ngModel)]="min" />
+    </label>
+    <label>
+      <span class="m-3">Max</span> 
+      <input type="number" name="max" id="max" [(ngModel)]="max" />
+    </label>
+    <button class="btn btn-primary m-3" type="submit">Filter by ID</button>
+</form>
+<br />
+<table datatable [dtOptions]="dtOptions" class="row-border hover"></table>
